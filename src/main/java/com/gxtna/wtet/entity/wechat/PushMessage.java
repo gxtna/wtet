@@ -1,4 +1,4 @@
-package com.gxtna.wtet.entity;
+package com.gxtna.wtet.entity.wechat;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

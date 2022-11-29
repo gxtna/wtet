@@ -1,4 +1,4 @@
-package com.gxtna.wtet.entity;
+package com.gxtna.wtet.entity.menu;
 
 /**
  * @author gxtna

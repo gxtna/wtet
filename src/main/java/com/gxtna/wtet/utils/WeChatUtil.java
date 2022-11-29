@@ -1,6 +1,6 @@
 package com.gxtna.wtet.utils;
 
-import com.gxtna.wtet.entity.PushMessage;
+import com.gxtna.wtet.entity.wechat.PushMessage;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.api.impl.WxMpServiceImpl;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateData;
@@ -21,7 +21,7 @@ public class WeChatUtil {
     // 要推送给的用户id
     private static final String toUserId = "o0Xqa5pNYf_AHr6d_5OxK49e7iSc";
     // 模版id
-    private static final String templateId = "8sCLYnW_kY3ZOEV047wJXFVRwOlX0Mp9gT1ysqE_Hmo";
+    private static final String templateId = "-q4La8h8qL0UlrO0bBEvEg1nnvSc-FjC43OJ0wP90lg";
 
 
     public static String pushMessage(List<PushMessage> messageList){

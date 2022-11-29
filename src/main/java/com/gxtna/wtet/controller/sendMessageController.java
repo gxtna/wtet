@@ -1,7 +1,7 @@
 package com.gxtna.wtet.controller;
 
 
-import com.gxtna.wtet.entity.PushMessage;
+import com.gxtna.wtet.entity.wechat.PushMessage;
 import com.gxtna.wtet.utils.WeChatUtil;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
