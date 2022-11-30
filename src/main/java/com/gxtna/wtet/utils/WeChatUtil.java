@@ -21,7 +21,7 @@ public class WeChatUtil {
     // 要推送给的用户id
     private static final String toUserId = "o0Xqa5pNYf_AHr6d_5OxK49e7iSc";
     // 模版id
-    private static final String templateId = "-q4La8h8qL0UlrO0bBEvEg1nnvSc-FjC43OJ0wP90lg";
+    private static final String templateId = "JwOjJshW6xBcMqqimk6Lrb7P00LkK6vsdSurrzxoX3w";
 
 
     public static String pushMessage(List<PushMessage> messageList){

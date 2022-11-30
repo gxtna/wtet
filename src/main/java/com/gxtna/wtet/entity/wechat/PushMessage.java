@@ -17,5 +17,5 @@ import lombok.experimental.Accessors;
 public class PushMessage {
     private String name;
     private String value;
-    private String color;
+    private String color = "#3A8F75FF";
 }
