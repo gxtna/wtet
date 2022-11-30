@@ -24,7 +24,7 @@ public class SetMsgUtil {
                     dataField.setAccessible(true);
                     if (field.getName().equals(dataField.getName())){
                         PushMessage pushMessage = new PushMessage();
-                        String value = String.valueOf(dataField.get(data));
+                        String value = String.valueOf(dataField.get(data)).replaceAll("T"," ");
                         pushMessage.setName(field.getName());
                         pushMessage.setValue(value);
                         list.add(pushMessage);

@@ -1,2 +1,18 @@
 server:
   port: 9999
+
+wtet:
+  gaodeapi:
+    key: adb0ec0ae1ca02547ffecc4933a64c48
+    private-key: 4dfc24bd11c42e201e8625b32e60cb9f
+    weather-api: https://restapi.amap.com/v3/weather/weatherInfo
+    geo-code-api: https://restapi.amap.com/v3/geocode/geo
+  wechatapi:
+    app-id: wx91c5d504d798066c
+    secret: 84372ef087cefea35bc7e7d98d37096e
+    to-user-id: o0Xqa5pNYf_AHr6d_5OxK49e7iSc
+    template-id: JwOjJshW6xBcMqqimk6Lrb7P00LkK6vsdSurrzxoX3w
+  jdapi:
+    key: 3ce37cf3acf72e0eb2beefeef5d34e97
+    api: https://way.jd.com/jisuapi
+    number: 20

@@ -6,6 +6,8 @@ import me.chanjar.weixin.mp.api.impl.WxMpServiceImpl;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateData;
 import me.chanjar.weixin.mp.bean.template.WxMpTemplateMessage;
 import me.chanjar.weixin.mp.config.impl.WxMpDefaultConfigImpl;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -14,17 +16,19 @@ import java.util.List;
  *   @date 2022/11/29 下午2:24
  *   @desciption: 微信消息类
  */
+@Component
 public class WeChatUtil {
 
-    private static final String appId = "wx91c5d504d798066c";
-    private static final String secret = "84372ef087cefea35bc7e7d98d37096e";
-    // 要推送给的用户id
-    private static final String toUserId = "o0Xqa5pNYf_AHr6d_5OxK49e7iSc";
-    // 模版id
-    private static final String templateId = "JwOjJshW6xBcMqqimk6Lrb7P00LkK6vsdSurrzxoX3w";
+    @Value("${wtet.wechatapi.app-id}")
+    private String appId;
+    @Value("${wtet.wechatapi.secret}")
+    private String secret;
+    @Value("${wtet.wechatapi.to-user-id}")
+    private String toUserId;
+    @Value("${wtet.wechatapi.template-id}")
+    private String templateId;
 
-
-    public static String pushMessage(List<PushMessage> messageList){
+    public  String pushMessage(List<PushMessage> messageList){
         WxMpDefaultConfigImpl wxStorage = new WxMpDefaultConfigImpl();
         wxStorage.setAppId(appId);
         wxStorage.setSecret(secret);
