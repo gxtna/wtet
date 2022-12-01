@@ -1,9 +1,9 @@
 package com.gxtna.wtet.service;
 
-import com.gxtna.wtet.entity.menu.MenuDetail;
+import com.gxtna.wtet.entity.recipe.RecipeDetail;
 import com.gxtna.wtet.entity.weather.WeatherChildren;
 import com.gxtna.wtet.entity.wechat.PushMessage;
-import com.gxtna.wtet.utils.MenuUtil;
+import com.gxtna.wtet.utils.RecipeUtil;
 import com.gxtna.wtet.utils.SetMsgUtil;
 import com.gxtna.wtet.utils.WeChatUtil;
 import com.gxtna.wtet.utils.WeatherUtil;
@@ -26,7 +26,7 @@ public class expireJobTask {
     @Autowired
     WeatherUtil weatherUtil;
     @Autowired
-    MenuUtil menuUtil;
+    RecipeUtil menuUtil;
     @Autowired
     WeChatUtil weChatUtil;
 
@@ -35,13 +35,13 @@ public class expireJobTask {
     //@Scheduled(cron = "0/10 * * * * ? ")
     public void executeJobTask(){
         List<PushMessage> list = setMessageList();
-        weChatUtil.pushMessage(list);
-        System.out.println("发了");
+        String s = weChatUtil.pushMessage(list);
+        System.out.println(s);
     }
 
     private List<PushMessage> setMessageList(){
         WeatherChildren weather = weatherUtil.getWeatherData("昌平区 昌平东关");
-        List<MenuDetail> details = menuUtil.searchMenu("火腿");
+        List<RecipeDetail> details = menuUtil.searchMenu("火腿");
         List<PushMessage> pushMessages = SetMsgUtil.setMsg(WeatherChildren.class, weather);
         PushMessage menuMessage = new PushMessage().setName("menu").setValue(details.get(0).getName());
         pushMessages.add(menuMessage);

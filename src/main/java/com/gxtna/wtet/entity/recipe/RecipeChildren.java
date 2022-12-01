@@ -1,4 +1,4 @@
-package com.gxtna.wtet.entity.menu;
+package com.gxtna.wtet.entity.recipe;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MenuChildren {
+public class RecipeChildren {
     private String num;
-    private List<MenuDetail> list;
+    private List<RecipeDetail> list;
 }

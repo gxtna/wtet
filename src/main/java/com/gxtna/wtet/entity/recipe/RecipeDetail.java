@@ -1,4 +1,4 @@
-package com.gxtna.wtet.entity.menu;
+package com.gxtna.wtet.entity.recipe;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +14,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MenuDetail {
+public class RecipeDetail {
     private String id;
     private String classid;
     private String name;
@@ -24,6 +24,6 @@ public class MenuDetail {
     private String content;
     private String pic;
     private String tag;
-    private List<MenuMaterial> material;
-    private List<MenuProcess> process;
+    private List<RecipeMaterial> material;
+    private List<RecipeProcess> process;
 }

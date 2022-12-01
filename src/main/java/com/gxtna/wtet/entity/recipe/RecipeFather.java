@@ -1,4 +1,4 @@
-package com.gxtna.wtet.entity.menu;
+package com.gxtna.wtet.entity.recipe;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,8 +12,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MenuFather {
+public class RecipeFather {
     private String status;
     private String msg;
-    private MenuChildren result;
+    private RecipeChildren result;
 }
