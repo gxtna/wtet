@@ -1,8 +1,6 @@
 package com.gxtna.wtet.entity;
 
-import com.baomidou.mybatisplus.annotation.FieldFill;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.annotation.*;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -30,6 +28,7 @@ public class RecipeRecord implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("记录表id")
+    @TableId(type = IdType.ASSIGN_ID)
     private String id;
 
     @ApiModelProperty("天气标签(晴,阴...)")
@@ -44,6 +43,10 @@ public class RecipeRecord implements Serializable {
     @ApiModelProperty("季节标签(春,夏,秋,冬)")
     private String seasonId;
 
+    @ApiModelProperty("菜谱的Id，这里只是方便记录，不会将真正的步骤存在数据库，每次使用是调接口就行")
+    private String recipeId;
+    @ApiModelProperty("菜谱的name")
+    private String recipeName;
     @ApiModelProperty("备注")
     private String remark;
 

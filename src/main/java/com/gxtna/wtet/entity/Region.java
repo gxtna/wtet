@@ -1,7 +1,9 @@
 package com.gxtna.wtet.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -28,6 +30,7 @@ public class Region implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty("地区ID")
+    @TableId(type = IdType.ASSIGN_ID)
     private String id;
 
     @ApiModelProperty("地区名")
