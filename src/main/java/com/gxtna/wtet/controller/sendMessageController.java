@@ -9,14 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/sendMsg")
 public class sendMessageController {
 
-    // todo 注册微信开发平台账号 发送真是的推送信息
-
-
-
-
     @GetMapping("/push")
     public void push() {
 
-
     }
+
 }

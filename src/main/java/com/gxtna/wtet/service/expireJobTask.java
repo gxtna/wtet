@@ -40,7 +40,7 @@ public class expireJobTask {
     }
 
     private List<PushMessage> setMessageList(){
-        WeatherChildren weather = weatherUtil.getWeatherData("昌平区 昌平东关");
+        WeatherChildren weather = weatherUtil.getWeatherData("北京市");
         List<RecipeDetail> details = menuUtil.searchMenu("火腿");
         List<PushMessage> pushMessages = SetMsgUtil.setMsg(WeatherChildren.class, weather);
         PushMessage menuMessage = new PushMessage().setName("menu").setValue(details.get(0).getName());

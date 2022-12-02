@@ -1,6 +1,7 @@
 server:
   port: 9999
 
+
 wtet:
   gaodeapi:
     key: adb0ec0ae1ca02547ffecc4933a64c48
@@ -16,3 +17,11 @@ wtet:
     key: 3ce37cf3acf72e0eb2beefeef5d34e97
     api: https://way.jd.com/jisuapi
     number: 20
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://localhost:5432/database
+    username: root
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+
