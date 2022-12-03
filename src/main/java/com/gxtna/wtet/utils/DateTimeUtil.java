@@ -37,4 +37,17 @@ public class DateTimeUtil {
     public static LocalTime formatLocalTime(String str){
         return Objects.requireNonNull(formatLocalDateTime(str)).toLocalTime();
     }
+
+    public static String getSeason(){
+        int value = LocalDateTime.now().getMonth().getValue();
+        String season="";
+        switch (value) {
+            case 3, 4, 5 -> season= "春";
+            case 6, 7, 8 -> season= "夏";
+            case 9, 10, 11 -> season= "秋";
+            case 12, 1, 2 -> season= "冬";
+        }
+        return season;
+    }
+
 }

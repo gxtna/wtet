@@ -5,10 +5,7 @@ import com.gxtna.wtet.entity.RecipeRecord;
 import com.gxtna.wtet.entity.recipe.RecipeDetail;
 import com.gxtna.wtet.entity.weather.WeatherChildren;
 import com.gxtna.wtet.entity.wechat.PushMessage;
-import com.gxtna.wtet.utils.RecipeUtil;
-import com.gxtna.wtet.utils.SetMsgUtil;
-import com.gxtna.wtet.utils.WeChatUtil;
-import com.gxtna.wtet.utils.WeatherUtil;
+import com.gxtna.wtet.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -49,13 +46,12 @@ public class ExpireJobTask {
     // TODO 虚假的菜谱推荐，后续要根据算法来返回菜谱
     private List<PushMessage> setMessageList() {
         WeatherChildren weather = weatherUtil.getWeatherData("北京市 昌平区");
-        String recipeName = null;
-        if (Integer.parseInt(weather.getTemperature()) < 5){
-            List<RecipeRecord> recordList = recipeRecordService.getBaseMapper().selectList(new LambdaQueryWrapper<RecipeRecord>()
-                    .eq(RecipeRecord::getSeasonId, "冬"));
-            int nextInt = ThreadLocalRandom.current().nextInt(recordList.size());
-            recipeName=   recordList.get(nextInt).getRecipeName();
-        }
+        String season = DateTimeUtil.getSeason();
+        List<RecipeRecord> recordList = recipeRecordService.getBaseMapper().selectList(new LambdaQueryWrapper<RecipeRecord>()
+                .eq(RecipeRecord::getSeasonId, season));
+        //  随机从list中获取一个数据返回
+        int nextInt = ThreadLocalRandom.current().nextInt(recordList.size());
+        String recipeName = recordList.get(nextInt).getRecipeName();
         List<RecipeDetail> details = menuUtil.searchMenu(recipeName);
         List<PushMessage> pushMessages = SetMsgUtil.setMsg(WeatherChildren.class, weather);
         PushMessage menuMessage = new PushMessage().setName("menu").setValue(details.get(0).getName());
